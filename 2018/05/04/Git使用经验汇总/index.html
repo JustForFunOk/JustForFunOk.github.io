@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git使用经验汇总 | SJ&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="SunJian,SunJian's Blog" />
+  
+  <meta name="description" content="资料汇总Git官网  Git小抄(英文) 2页pdf文档，里面有最常用的一些命令。  Git参考文档(英文) 最全面最官方的使用文档了吧。里面有所有命令的具体使用格式，还有使用例子，想知道某个命令怎么使用必须来这里啊。   git - 简明指南 ​    概括了常用的命令 Git 分支的最佳实践 ​    译文，里面有经典的流程图 单词staged 暂存的 branch 分支 merge 合并 r">
+<meta name="keywords" content="汇总,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git使用经验汇总">
+<meta property="og:url" content="http://yoursite.com/2018/05/04/Git使用经验汇总/index.html">
+<meta property="og:site_name" content="SJ&#39;s Blog">
+<meta property="og:description" content="资料汇总Git官网  Git小抄(英文) 2页pdf文档，里面有最常用的一些命令。  Git参考文档(英文) 最全面最官方的使用文档了吧。里面有所有命令的具体使用格式，还有使用例子，想知道某个命令怎么使用必须来这里啊。   git - 简明指南 ​    概括了常用的命令 Git 分支的最佳实践 ​    译文，里面有经典的流程图 单词staged 暂存的 branch 分支 merge 合并 r">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-08T01:56:17.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git使用经验汇总">
+<meta name="twitter:description" content="资料汇总Git官网  Git小抄(英文) 2页pdf文档，里面有最常用的一些命令。  Git参考文档(英文) 最全面最官方的使用文档了吧。里面有所有命令的具体使用格式，还有使用例子，想知道某个命令怎么使用必须来这里啊。   git - 简明指南 ​    概括了常用的命令 Git 分支的最佳实践 ​    译文，里面有经典的流程图 单词staged 暂存的 branch 分支 merge 合并 r">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?2cc919d6055fad7046e85c082b198acb";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">SunJian&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        SunJian&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        记录生活中的精彩
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Github" target="_blank" href="//github.com/JustForFunOk">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Git使用经验汇总" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Git使用经验汇总
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/编程语言/">编程语言</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-04
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="资料汇总"><a href="#资料汇总" class="headerlink" title="资料汇总"></a>资料汇总</h2><p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git官网</a></p>
+<ul>
+<li><p><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf" target="_blank" rel="noopener">Git小抄(英文)</a></p>
+<p>2页pdf文档，里面有最常用的一些命令。</p>
+</li>
+<li><p><a href="https://git-scm.com/docs" target="_blank" rel="noopener"><strong>Git参考文档</strong>(英文)</a></p>
+<p>最全面最官方的使用文档了吧。里面有所有命令的具体使用格式，还有使用例子，想知道某个命令怎么使用必须来这里啊。</p>
+</li>
+</ul>
+<p><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">git - 简明指南</a></p>
+<p>​    概括了常用的命令</p>
+<p><a href="http://jiongks.name/blog/a-successful-git-branching-model/" target="_blank" rel="noopener">Git 分支的最佳实践</a></p>
+<p>​    译文，里面有经典的流程图</p>
+<h2 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h2><p>staged 暂存的</p>
+<p>branch 分支</p>
+<p>merge 合并</p>
+<p>reset 重置</p>
+<p>checkout 检出</p>
+<p>repository 仓库</p>
+<p>origin 起源</p>
+<h2 id="新手误区"><a href="#新手误区" class="headerlink" title="新手误区"></a>新手误区</h2><ul>
+<li><p>git并不一定要结合github之类的远程仓库，本机使用git完全可以实现版本控制，包括分支切换，版本退回等功能。</p>
+<p>Git works entirely offline. Commits, branches, merges, re-bases, resetting history, even searching through those historical events, all happens in an offline mode.（From <a href="https://git-scm.com/video/quick-wins" target="_blank" rel="noopener">Git官网教学视频-Git Basics Episode 4</a>）</p>
+</li>
+</ul>
+<h2 id="常见疑问"><a href="#常见疑问" class="headerlink" title="常见疑问"></a>常见疑问</h2><h3 id="配置用户名和邮箱有什么用？"><a href="#配置用户名和邮箱有什么用？" class="headerlink" title="配置用户名和邮箱有什么用？"></a>配置用户名和邮箱有什么用？</h3><p>您需要配置您的用户名和电子邮件地址。 这些不用于任何Git托管站点的凭证。 它们只是本地记录，可以让您对版本控制系统中将要执行的工作有信心。</p>
+<p>You need to configure your user name and email address. These are not used for credentials on any of the Git hosting sites. They’re simply local records to give you credit for the work that you’ll be doing in the version control system.</p>
+<p>These are not credentials used for any hosting service. They’re merely who to give credit to when it records the historical events that we call commits. You’ll first configure your username. In this case, we’ll just make it friendly name that you would go by for team members, or more publicly known on the net. Its corresponding cousin is user.email, and we’ll set that to whatever we would like, again, to record in our commits and to be known by, either within the team or, if we share this code open-source, publicly. That’s all the configuration that’s necessary.(From <a href="https://git-scm.com/video/get-going" target="_blank" rel="noopener">Git官网教学视频-Git Basics Episode 3</a>)</p>
+<p>没有配置也能正常使用啊？</p>
+<p>如果你的用户名和邮箱跟你的github账号一致，提交修改时，会将这两者关联起来.</p>
+<p>没有配置好用户名和邮箱时，账号头像无法显示，也无法点击用户进入用户资料页。配置好后Github能将提交作者和其相关账号关联，可以点击作者名进入作者账户资料页。（参考自：<a href="https://zhidao.baidu.com/question/530437180.html" target="_blank" rel="noopener">百度知道-git中用户名和邮箱有什么用？特别是邮箱</a>）</p>
+<p>确实是这样，github上的stereo_vision项目的<a href="https://github.com/JustForFunOk/stereo_vision/commits/master" target="_blank" rel="noopener">提交记录</a>中使用没有设置用户名和邮箱的电脑提交时就显示的是电脑的用户名jason，而使用配置用户名和邮箱的树莓派提交时显示的就是github的用户名并且有头像显示。</p>
+<h3 id="暂存区有什么用？"><a href="#暂存区有什么用？" class="headerlink" title="暂存区有什么用？"></a>暂存区有什么用？</h3><p>借鉴于SVN，其最重要的特性之一就是原子性提交，每一个提交都是由多个文件的修改组成，而且这个提交是原子性的，要么这些修改全部成功，要么全部失败。原子性提交带来的好处是显而易见的，这使得我们把项目整体还原到某个阶段或者时间点变得极为简便，就这一点SVN就完虐VSS等源代码管理工具。</p>
+<p>Git要实现这个效果只需要在commit前面，添加一个暂存区就好了。暂存区是可以随意的将各种文件的修改放进去的，这样我们就可以用多个指令精确的挑选出我们需要提交的所有修改，然后再一次性的（原子性的）提交到版本库。（参考自：<a href="https://www.zhihu.com/question/19946553" target="_blank" rel="noopener">知乎-为什么要先 git add 才能 git commit ？-lvony的回答</a>）</p>
+<h3 id="git-checkout-branch-会覆盖工作区中的内容吗？"><a href="#git-checkout-branch-会覆盖工作区中的内容吗？" class="headerlink" title="git checkout [branch]会覆盖工作区中的内容吗？"></a>git checkout [branch]会覆盖工作区中的内容吗？</h3><p>工作区中修改了文件没有提交，然后checkout到其他分支，为什么没有覆盖掉当前工作区的内容？</p>
+<p>工作区的修改提交了以后能够正常切换分支并更新工作区中的文件。</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>本地仓库包括三个部分：</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>常用的命令都在官方的小抄里了，所以这部分相当于小抄的增强翻译版。</p>
+<h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>对本地所有仓库配置使用者信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;[name]&quot;</span><br><span class="line">$ git config --global user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure>
+<p>不设置用户名和邮箱时，git log中的作者信息默认使用电脑用户名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Author: Jian Sun &lt;Jian Sun&gt;</span><br></pre></td></tr></table></figure>
+<p>设置之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Author: SunJian &lt;slgsunjian@163.com&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><p>创建文件两种途径：1、本地新建一个新的仓库；2、从网络链接中获取一个。</p>
+<p><strong><code>git init &lt;project-name&gt;</code></strong></p>
+<p>创建一个指定名称的本地仓库</p>
+<p><strong><code>git clone [url]</code></strong></p>
+<p>下载工程以及其整个的版本历史</p>
+<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><h4 id="查看工作树中文件状态"><a href="#查看工作树中文件状态" class="headerlink" title="查看工作树中文件状态"></a>查看工作树中文件状态</h4><p><strong><code>git status</code></strong></p>
+<p>列出所有还没有被提交的新的或修改过的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch develop</span><br><span class="line">Changes to be committed: # 修改后放在暂存区里还没有提交的文件</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">        modified:   TestB.txt</span><br><span class="line"></span><br><span class="line">Changes not staged for commit: # 修改后没有放到暂存区也没有提交的文件</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">        modified:   TestB.txt</span><br></pre></td></tr></table></figure>
+<h4 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h4><p><strong><code>git branch</code></strong></p>
+<p>列出当前仓库中所有的本地分支。*代表当然所在分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* develop</span><br></pre></td></tr></table></figure>
+<p><code>git branch -a</code>列出本地和远程的分支。</p>
+<h4 id="查看历史版本信息git-log"><a href="#查看历史版本信息git-log" class="headerlink" title="查看历史版本信息git log"></a>查看历史版本信息<a href="https://git-scm.com/docs/git-log" target="_blank" rel="noopener">git log</a></h4><p><strong><code>git log</code></strong></p>
+<p>查看当前分支的版本历史（指的是commit到分支的版本历史）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line">commit acb134faff2bbdd538b66b41d3bc8d0864541826</span><br><span class="line">Author: SunJian &lt;slgsunjian@163.com&gt;</span><br><span class="line">Date:   Sat May 5 13:29:01 2018 +0800</span><br><span class="line"></span><br><span class="line">    Hello World</span><br><span class="line"></span><br><span class="line">commit bcb9255a1daff0739fbde23039a5d276b4417d6c</span><br><span class="line">Author: Jian Sun &lt;Jian Sun&gt;</span><br><span class="line">Date:   Fri May 4 13:30:49 2018 +0800</span><br><span class="line"></span><br><span class="line">    Hello</span><br></pre></td></tr></table></figure>
+<ul>
+<li>简化输出可以使用命令：<code>git log --pretty=oneline</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty=oneline</span><br><span class="line">acb134faff2bbdd538b66b41d3bc8d0864541826 Hello World</span><br><span class="line">bcb9255a1daff0739fbde23039a5d276b4417d6c Hello</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只查看指定文件的历史版本:<code>git log --follow [file]</code></li>
+</ul>
+<p>查看某个文件在当前分支的版本历史。</p>
+<p>注意：1、若此文件修改过文件名则修改文件名之前的版本历史不可查看。</p>
+<p>2、此命令和git log结果往往不相同，因为git提交的是文件的更改，若你修改了文件A并提交了，则git log中会有记录，而git log –follow B中并不会有记录，因为它并没有发生改变。</p>
+<ul>
+<li>树形结构展示所有分支以及其之间的关系：<code>git log --graph --oneline --decorate -all</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --oneline  --decorate --all</span><br><span class="line">* a956c98 (HEAD -&gt; develop) TestC I amnot SJ</span><br><span class="line">| * 08fe7d1 (TryDebug) TestC - I am SJ</span><br><span class="line">|/</span><br><span class="line">* 31de047 TestC haha</span><br><span class="line">* 42cf452 TryDebug Delete</span><br><span class="line">* f849d8e TryDebug branch</span><br><span class="line">* 2e8e341 add SunJian</span><br><span class="line">* 13107c1 add file TestC</span><br><span class="line">* 03307e5 change filename TestB</span><br><span class="line">* acb134f Hello World</span><br><span class="line">* bcb9255 (origin/develop) Hello</span><br></pre></td></tr></table></figure>
+<h4 id="查看所有重要操作记录"><a href="#查看所有重要操作记录" class="headerlink" title="查看所有重要操作记录"></a>查看所有重要操作记录</h4><p><strong><code>git reflog</code></strong></p>
+<p>显示所有重要操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br><span class="line">31de047 HEAD@&#123;0&#125;: commit: TestC haha</span><br><span class="line">42cf452 HEAD@&#123;1&#125;: checkout: moving from develop to TryDebug</span><br><span class="line">f849d8e HEAD@&#123;2&#125;: checkout: moving from TryDebug to develop</span><br><span class="line">42cf452 HEAD@&#123;3&#125;: checkout: moving from develop to TryDebug</span><br><span class="line">f849d8e HEAD@&#123;4&#125;: checkout: moving from TryDebug to develop</span><br><span class="line">42cf452 HEAD@&#123;5&#125;: commit: TryDebug Delete</span><br><span class="line">f849d8e HEAD@&#123;6&#125;: checkout: moving from develop to TryDebug</span><br><span class="line">f849d8e HEAD@&#123;7&#125;: merge TryDebug: Fast-forward</span><br><span class="line">2e8e341 HEAD@&#123;8&#125;: checkout: moving from TryDebug to develop</span><br><span class="line">f849d8e HEAD@&#123;9&#125;: commit: TryDebug branch</span><br><span class="line">2e8e341 HEAD@&#123;10&#125;: checkout: moving from develop to TryDebug</span><br><span class="line">2e8e341 HEAD@&#123;11&#125;: commit: add SunJian</span><br><span class="line">13107c1 HEAD@&#123;12&#125;: commit: add file TestC</span><br><span class="line">03307e5 HEAD@&#123;13&#125;: commit: change filename TestB</span><br><span class="line">acb134f HEAD@&#123;14&#125;: commit: Hello World</span><br><span class="line">bcb9255 HEAD@&#123;15&#125;: commit (initial): Hello</span><br></pre></td></tr></table></figure>
+<h3 id="工作树中文件操作"><a href="#工作树中文件操作" class="headerlink" title="工作树中文件操作"></a>工作树中文件操作</h3><p>工作树分为三部分：工作区、暂存区、提交区。</p>
+<h4 id="工作区到暂存区"><a href="#工作区到暂存区" class="headerlink" title="工作区到暂存区"></a>工作区到暂存区</h4><p><strong><code>git add &lt;file&gt;</code></strong></p>
+<p>快照某个指定文件以准备版本控制。只是对暂存区中的内容做了修改。</p>
+<p>常用<code>git add .</code>快照所有文件。</p>
+<h4 id="暂存区到提交区"><a href="#暂存区到提交区" class="headerlink" title="暂存区到提交区"></a>暂存区到提交区</h4><p><strong><code>git commit -m &quot;&lt;descriptive message&gt;&quot;</code></strong></p>
+<p>在版本记录中永久记录文件快照。</p>
+<h4 id="工作区到提交区"><a href="#工作区到提交区" class="headerlink" title="工作区到提交区"></a>工作区到提交区</h4><p>工作区到暂存区+暂存区到提交区</p>
+<h4 id="暂存区到工作区"><a href="#暂存区到工作区" class="headerlink" title="暂存区到工作区"></a>暂存区到工作区</h4><p><strong><code>git checkout -- &lt;file-name&gt;</code></strong></p>
+<p>撤回对工作区中指定文件的修改。只是对工作区的内容做了修改。实质上就是将暂存区内的内容“覆盖”掉工作区的内容以达到撤回的目的。</p>
+<p>注意：</p>
+<ol>
+<li><p><code>--</code>是为了避免文件名与分支名相同，而导致该命令与切换分支命令冲突，不冲突的情况下是可以省略的。</p>
+</li>
+<li><p>被修改和删除的可以撤回，新建的文件不能撤回。</p>
+</li>
+<li><p><code>git checkout -- .</code>撤回工作区内所有文件的修改。</p>
+<p><code>git checkout -- &#39;*.c&#39;</code>撤回所有.c文件的修改。</p>
+</li>
+</ol>
+<h4 id="提交区到暂存区"><a href="#提交区到暂存区" class="headerlink" title="提交区到暂存区"></a>提交区到暂存区</h4><p>无。</p>
+<h4 id="提交区到工作区"><a href="#提交区到工作区" class="headerlink" title="提交区到工作区"></a>提交区到工作区</h4><p>这部分属于版本回退的内容。</p>
+<h3 id="对分支的操作"><a href="#对分支的操作" class="headerlink" title="对分支的操作"></a>对分支的操作</h3><h4 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h4><p><strong><code>git branch &lt;branch-name&gt;</code></strong></p>
+<p>创建一条新的分支。</p>
+<p>注意：该分支会继承创建分支时所在分支的版本历史。</p>
+<p><code>git checkout -b &lt;branch-name&gt;</code>创建并切换分支。</p>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><p><strong><code>git checkout &lt;branch-name&gt;</code></strong></p>
+<p>切换到指定的分支并更新工作区的内容。</p>
+<p>注意：</p>
+<ol>
+<li><p>切换到其他分支之前要保证先提交当前分支的修改，否则会报错：</p>
+<p>error: Your local changes to the following files would be overwritten by checkout:</p>
+<pre><code>TestB.txt
+</code></pre><p>Please, commit your changes or stash them before you can switch branches.<br>Aborting</p>
+</li>
+</ol>
+<h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><p><strong><code>git merge &lt;branch-name&gt;</code></strong></p>
+<p>将指定分支的历史记录合并到当前分支中。</p>
+<p>注意：指定分支的历史版本都会合并到当前分支。</p>
+<p>疑问：那如果merge到master分支时，所有的历史版本都合并过去的话，那创建其他分支还有什么作用，怎么保证master所谓的”干净“？</p>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><p><strong><code>git branch -d &lt;branch-name&gt;</code></strong></p>
+<p>删除指定分支。</p>
+<p>注意：</p>
+<ol>
+<li><p>先切换到其他分支才能删除该分支。否则会报错：</p>
+<p>error: Cannot delete the branch ‘TryDebug’ which you are currently on.</p>
+</li>
+<li><p>若要删除的分支有内容没有合并到其他分支则会报错：</p>
+<p>error: The branch ‘TryDebug’ is not fully merged.<br>If you are sure you want to delete it, run ‘git branch -D TryDebug’.</p>
+</li>
+</ol>
+<h3 id="比较不同"><a href="#比较不同" class="headerlink" title="比较不同"></a>比较不同</h3><p>可以比较任意两处的不同。具体使用可参见：<a href="https://git-scm.com/docs/git-diff" target="_blank" rel="noopener">git diff</a></p>
+<p>分为以下三种情况：</p>
+<h4 id="1-同一分支同一版本不同工作树之间的比较"><a href="#1-同一分支同一版本不同工作树之间的比较" class="headerlink" title="1. 同一分支同一版本不同工作树之间的比较"></a>1. 同一分支同一版本不同工作树之间的比较</h4><p>比较的是三个工作树之间的不同。</p>
+<h5 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h5><p>显示工作区和暂存区中文件的不同。显示的结果等价于<code>git diff &lt;暂存区&gt; &lt;工作区&gt;</code></p>
+<p>疑问：这个有什么用呀？一般修改后要提交都会git add然后再git commit，谁会把修改后的放在暂存区里却不提交呀。</p>
+<p>答：不是，提交后暂存区会一直储存你放入暂存区的最新版本。所以你修改完文件后可以使用git diff查看你做了哪些修改。</p>
+<h5 id="git-diff-–staged"><a href="#git-diff-–staged" class="headerlink" title="git diff –staged"></a>git diff –staged</h5><p>显示暂存区和最新提交版本中文件的不同。</p>
+<h5 id="git-diff-HEAD"><a href="#git-diff-HEAD" class="headerlink" title="git diff HEAD"></a>git diff HEAD</h5><p>显示工作区和最新提交版本中文件的不同。</p>
+<p><code>git diff HEAD -- ./&lt;filename&gt;</code>指定文件的不同</p>
+<p><code>git diff HEAD -- ./&#39;*.txt&#39;</code>所有指定类型文件的不同</p>
+<h4 id="2-同一分支不同版本之间的比较"><a href="#2-同一分支不同版本之间的比较" class="headerlink" title="2. 同一分支不同版本之间的比较"></a>2. 同一分支不同版本之间的比较</h4><h5 id="git-diff-HEAD-HEAD"><a href="#git-diff-HEAD-HEAD" class="headerlink" title="git diff HEAD^ HEAD"></a>git diff HEAD^ HEAD</h5><p>比较上一个版本和最新版本之间的区别。</p>
+<p>同理<code>HEAD^^</code>代表上上一个版本，也可以写作<code>HEAD~2</code>。</p>
+<h4 id="3-不同分支之间的比较"><a href="#3-不同分支之间的比较" class="headerlink" title="3. 不同分支之间的比较"></a>3. 不同分支之间的比较</h4><p>比较的是分支之间提交过的内容的不同，未提交的内容无法比较。</p>
+<h5 id="git-diff-1"><a href="#git-diff-1" class="headerlink" title="git diff "></a>git diff <specified-branch></specified-branch></h5><p>比较指定分支与当前分支之间的不同。等价于<code>git diff &lt;specified-branch&gt; &lt;current-branch&gt;</code></p>
+<h5 id="git-diff-2"><a href="#git-diff-2" class="headerlink" title="git diff  "></a>git diff <first-branch> <second-branch></second-branch></first-branch></h5><p>比较两分支之间最新内容的不同。同<code>git diff &lt;first-branch&gt;..&lt;second-branch&gt;</code></p>
+<h5 id="git-diff-3"><a href="#git-diff-3" class="headerlink" title="git diff  "></a>git diff <version1-id> <version2-id></version2-id></version1-id></h5><p>更通用的方法，比较任意两个版本之间的不同。先用<code>git reflog</code>查找需要比较的两个版本的ID号，然后进行比较。</p>
+<h5 id="git-diff-…"><a href="#git-diff-…" class="headerlink" title="git diff …"></a>git diff <first-branch>…<second-branch></second-branch></first-branch></h5><p>比较两分支自上次同步后，second-branch作了哪些修改。</p>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>回到过去。</p>
+<h4 id="git-reset-commit"><a href="#git-reset-commit" class="headerlink" title="git reset [commit]"></a>git reset [commit]</h4><h4 id="git-reset-–hard-commit"><a href="#git-reset-–hard-commit" class="headerlink" title="git reset –hard [commit]"></a>git reset –hard [commit]</h4><p>退回到之前提交过的一个版本并更新工作区文件。</p>
+<p>commit可以是版本的ID，一般使用前7位即可，如<code>git reset --hard 42cf452</code></p>
+<p>也可以使用<code>git reset --hard HEAD^</code>或者<code>git reset --hard HEAD~1</code>退回到上一个版本，可以此类推回到之前的任意版本。</p>
+<p>此命令也可以用于退回到旧的版本后想再回到新的版本，需要配合<code>git reflog</code>找到新的版本的版本ID，然后<code>gitreset --hard [ID]</code>即可在各个版本之间切换自如。（参考自：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013744142037508cf42e51debf49668810645e02887691000/" target="_blank" rel="noopener">廖雪峰的官方网站-版本回退</a>）</p>
+<p>注意：这种方法对于有远程仓库的使用起来会有问题。详见上述网站的评论。可以使用revert+push</p>
+<h3 id="结合远程仓库"><a href="#结合远程仓库" class="headerlink" title="结合远程仓库"></a>结合远程仓库</h3><h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><p><strong><code>git remote add &lt;remote-repository-name&gt; &lt;url&gt;</code></strong></p>
+<p>将本地仓库添加到远程仓库中。</p>
+<p><code>&lt;repository-name&gt;</code>为远程仓库的名称，一般教程上为<code>origin</code>。</p>
+<p><code>&lt;url&gt;</code>为远程仓库的地址。</p>
+<h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><p><strong><code>git remote</code></strong></p>
+<p>查看已有的远程仓库。</p>
+<p><strong><code>git branch -r</code></strong></p>
+<p>查看远程仓库的分支。</p>
+<p><strong><code>git remote -v</code></strong></p>
+<p>查看本地仓库都链接到了哪些远程仓库。</p>
+<p><code>-v</code>中v是verbose详细的。（参考自：<a href="https://blog.csdn.net/wangjia55/article/details/8802490" target="_blank" rel="noopener">CSDN-git命令之git remote的用法</a>）</p>
+<h4 id="推送本地仓库到远程仓库"><a href="#推送本地仓库到远程仓库" class="headerlink" title="推送本地仓库到远程仓库"></a>推送本地仓库到远程仓库</h4><p><strong><code>git push &lt;remote-repository-name&gt; &lt;branch-name&gt;</code></strong></p>
+<p>推送指定分支到远程仓库中相同名称的分支。如果远程仓库没有这个名称的分支则会创建一个。</p>
+<p><code>git push &lt;remote-repository-name&gt; HEAD</code></p>
+<p>推送当前分支到远程仓库中相同名称的分支。</p>
+<h4 id="拉取远程仓库到本地仓库"><a href="#拉取远程仓库到本地仓库" class="headerlink" title="拉取远程仓库到本地仓库"></a>拉取远程仓库到本地仓库</h4><p><strong><code>git pull</code></strong></p>
+<p>从远程仓库获取最新版本并合并到本地。</p>
+<p>git pull的操作相当于，git fetch + git merge。</p>
+<p><strong><code>git fetch</code></strong></p>
+<p>将远程仓库的最新版本拉取到本地，但是不自动合并。</p>
+<p>在实际使用中，git fetch更安全一些，因为在merge前，我们可以查看更新情况，然后再决定是否合并。（参考自：<a href="https://blog.csdn.net/hudashi/article/details/7664457" target="_blank" rel="noopener">CSDN-Git fetch和git pull的区别</a>）</p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><h2 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h2><h3 id="bug0001"><a href="#bug0001" class="headerlink" title="bug0001"></a>bug0001</h3><p>$ git checkout master</p>
+<p>error: pathspec ‘master’ did not match any file(s) known to git.</p>
+<p>描述：本地新建仓库后，新建develop进行操作，操作完毕想切回master分支出现错误，此时master分支里是空的。</p>
+<p>解决：新建仓库后需要有个初始的commit之后master分支才存在。也就是说正常操作流程应该是git init &gt; 创建文件并提交 &gt; 创建新分支 &gt; 切换到新分支进行一系列操作</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年05月08日 09:56</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/04/Git使用经验汇总/" title="Git使用经验汇总">http://yoursite.com/2018/05/04/Git使用经验汇总/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="SJ">
+                SJ
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thank u ~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/05/04/Git使用经验汇总/&title=《Git使用经验汇总》 — SJ's Blog&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/05/04/Git使用经验汇总/&title=《Git使用经验汇总》 — SJ's Blog&source=记录生活中的精彩" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/04/Git使用经验汇总/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git使用经验汇总》 — SJ's Blog&url=http://yoursite.com/2018/05/04/Git使用经验汇总/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/04/Git使用经验汇总/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/05/04/Git使用经验汇总/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/汇总/" class="color3">汇总</a>
+      
+    <a href="/tags/Git/" class="color4">Git</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资料汇总"><span class="post-toc-text">资料汇总</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单词"><span class="post-toc-text">单词</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#新手误区"><span class="post-toc-text">新手误区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见疑问"><span class="post-toc-text">常见疑问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置用户名和邮箱有什么用？"><span class="post-toc-text">配置用户名和邮箱有什么用？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#暂存区有什么用？"><span class="post-toc-text">暂存区有什么用？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-checkout-branch-会覆盖工作区中的内容吗？"><span class="post-toc-text">git checkout [branch]会覆盖工作区中的内容吗？</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础知识"><span class="post-toc-text">基础知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置信息"><span class="post-toc-text">配置信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化仓库"><span class="post-toc-text">初始化仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看状态"><span class="post-toc-text">查看状态</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看工作树中文件状态"><span class="post-toc-text">查看工作树中文件状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看所有分支"><span class="post-toc-text">查看所有分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看历史版本信息git-log"><span class="post-toc-text">查看历史版本信息git log</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看所有重要操作记录"><span class="post-toc-text">查看所有重要操作记录</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工作树中文件操作"><span class="post-toc-text">工作树中文件操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#工作区到暂存区"><span class="post-toc-text">工作区到暂存区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#暂存区到提交区"><span class="post-toc-text">暂存区到提交区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#工作区到提交区"><span class="post-toc-text">工作区到提交区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#暂存区到工作区"><span class="post-toc-text">暂存区到工作区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#提交区到暂存区"><span class="post-toc-text">提交区到暂存区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#提交区到工作区"><span class="post-toc-text">提交区到工作区</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对分支的操作"><span class="post-toc-text">对分支的操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建分支"><span class="post-toc-text">创建分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#切换分支"><span class="post-toc-text">切换分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#合并分支"><span class="post-toc-text">合并分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除分支"><span class="post-toc-text">删除分支</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较不同"><span class="post-toc-text">比较不同</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-同一分支同一版本不同工作树之间的比较"><span class="post-toc-text">1. 同一分支同一版本不同工作树之间的比较</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff"><span class="post-toc-text">git diff</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-–staged"><span class="post-toc-text">git diff –staged</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-HEAD"><span class="post-toc-text">git diff HEAD</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-同一分支不同版本之间的比较"><span class="post-toc-text">2. 同一分支不同版本之间的比较</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-HEAD-HEAD"><span class="post-toc-text">git diff HEAD^ HEAD</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-不同分支之间的比较"><span class="post-toc-text">3. 不同分支之间的比较</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-1"><span class="post-toc-text">git diff </span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-2"><span class="post-toc-text">git diff  </span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-3"><span class="post-toc-text">git diff  </span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#git-diff-…"><span class="post-toc-text">git diff …</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#版本回退"><span class="post-toc-text">版本回退</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git-reset-commit"><span class="post-toc-text">git reset [commit]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git-reset-–hard-commit"><span class="post-toc-text">git reset –hard [commit]</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结合远程仓库"><span class="post-toc-text">结合远程仓库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加远程仓库"><span class="post-toc-text">添加远程仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看远程仓库"><span class="post-toc-text">查看远程仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#推送本地仓库到远程仓库"><span class="post-toc-text">推送本地仓库到远程仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#拉取远程仓库到本地仓库"><span class="post-toc-text">拉取远程仓库到本地仓库</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用场景"><span class="post-toc-text">使用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BUG"><span class="post-toc-text">BUG</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bug0001"><span class="post-toc-text">bug0001</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/08/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Hello World
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/03/26/OpenCV汇总/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">OpenCV汇总</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="gitment_container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Fri May 04 2018 12:48:48 GMT+0800', // 使用文章的时间来判断文章
+  owner: 'JustForFunOk',
+  repo: 'JustForFunOk.github.io', //将评论储存在这个仓库的评论里
+  oauth: {
+    client_id: '4621b003f93d45ee5a4e',
+    client_secret: '1b0b8c75ca9ff29600a4e7907463f71d79bdb163',
+  },
+})
+gitment.render('gitment_container')
+</script>
+
+    
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 SJ<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/OpenCV/">OpenCV</a><a class="category-link" href="/categories/Ubuntu/">Ubuntu</a><a class="category-link" href="/categories/电脑个性化/">电脑个性化</a><a class="category-link" href="/categories/编程语言/">编程语言</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
