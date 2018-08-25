@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cplusplus-Style-Guide | SJ&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="SunJian,SunJian's Blog" />
+  
+  <meta name="description" content="本篇文章主推谷歌开源的C++编程规范  资料汇总Google编程规范资料文档篇Google C++ Style Guide  官方英文文档 Google对于几乎所有语言都有对应的编程风格的文档：styleguide  谷歌C++风格指南  中文开源项目，由英文文档翻译而来 里面还有Python等语言的风格指南  一张图总结Google C++编程规范(Google C++ Style Guide">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cplusplus-Style-Guide">
+<meta property="og:url" content="http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/index.html">
+<meta property="og:site_name" content="SJ&#39;s Blog">
+<meta property="og:description" content="本篇文章主推谷歌开源的C++编程规范  资料汇总Google编程规范资料文档篇Google C++ Style Guide  官方英文文档 Google对于几乎所有语言都有对应的编程风格的文档：styleguide  谷歌C++风格指南  中文开源项目，由英文文档翻译而来 里面还有Python等语言的风格指南  一张图总结Google C++编程规范(Google C++ Style Guide">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-18T02:49:02.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cplusplus-Style-Guide">
+<meta name="twitter:description" content="本篇文章主推谷歌开源的C++编程规范  资料汇总Google编程规范资料文档篇Google C++ Style Guide  官方英文文档 Google对于几乎所有语言都有对应的编程风格的文档：styleguide  谷歌C++风格指南  中文开源项目，由英文文档翻译而来 里面还有Python等语言的风格指南  一张图总结Google C++编程规范(Google C++ Style Guide">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?2cc919d6055fad7046e85c082b198acb";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">SunJian&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        SunJian&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        记录生活中的精彩
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Github" target="_blank" href="//github.com/JustForFunOk">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Cplusplus-Style-Guide" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Cplusplus-Style-Guide
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-06-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p>本篇文章主推谷歌开源的C++编程规范</p>
+</blockquote>
+<h2 id="资料汇总"><a href="#资料汇总" class="headerlink" title="资料汇总"></a>资料汇总</h2><h3 id="Google编程规范资料"><a href="#Google编程规范资料" class="headerlink" title="Google编程规范资料"></a>Google编程规范资料</h3><h4 id="文档篇"><a href="#文档篇" class="headerlink" title="文档篇"></a>文档篇</h4><p><a href="https://google.github.io/styleguide/cppguide.html" target="_blank" rel="noopener">Google C++ Style Guide</a></p>
+<ul>
+<li>官方英文文档</li>
+<li>Google对于几乎所有语言都有对应的编程风格的文档：<a href="https://github.com/google/styleguide" target="_blank" rel="noopener">styleguide</a></li>
+</ul>
+<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/" target="_blank" rel="noopener">谷歌C++风格指南</a></p>
+<ul>
+<li>中文开源项目，由英文文档翻译而来</li>
+<li>里面还有Python等语言的风格指南</li>
+</ul>
+<p><a href="https://blog.csdn.net/voidccc/article/details/37599203" target="_blank" rel="noopener">一张图总结Google C++编程规范(Google C++ Style Guide)</a></p>
+<ul>
+<li>作者原创的一幅图，不错</li>
+</ul>
+<p><a href="http://oin03u33p.bkt.clouddn.com/Google+C+++%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83.pdf" target="_blank" rel="noopener">一份中文pdf文档</a></p>
+<h4 id="工具篇"><a href="#工具篇" class="headerlink" title="工具篇"></a>工具篇</h4><h5 id="Cpplint"><a href="#Cpplint" class="headerlink" title="Cpplint"></a>Cpplint</h5><p><a href="https://github.com/google/styleguide/tree/gh-pages/cpplint" target="_blank" rel="noopener">cpplint</a></p>
+<ul>
+<li><p>官方链接</p>
+</li>
+<li><p>Cpplint是一个python脚本，Google使用它作为自己的C++代码规范检查工具</p>
+</li>
+</ul>
+<p><a href="https://blog.csdn.net/fengbingchun/article/details/47341765" target="_blank" rel="noopener">Google代码规范工具Cpplint的使用</a></p>
+<ul>
+<li>使用教程</li>
+</ul>
+<h4 id="讨论篇"><a href="#讨论篇" class="headerlink" title="讨论篇"></a>讨论篇</h4><p><a href="https://blog.csdn.net/fullsail/article/details/8039253" target="_blank" rel="noopener">匈牙利命名法的辩思</a></p>
+<ul>
+<li>讨论了这个命名法的发展，以及为什么不推荐使用</li>
+<li>文档最后还推荐了几本编程分割相关的书</li>
+<li>里面提到在VisualStudio中安装Visual Assist，了解一下这个/</li>
+</ul>
+<h2 id="内容篇"><a href="#内容篇" class="headerlink" title="内容篇"></a>内容篇</h2><h3 id="预处理宏"><a href="#预处理宏" class="headerlink" title="预处理宏"></a><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/others/#preprocessor-macros" target="_blank" rel="noopener">预处理宏</a></h3><ul>
+<li>用宏表示常量可被 const 变量代替</li>
+</ul>
+<h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><table>
+<thead>
+<tr>
+<th>命名形式</th>
+<th>规则</th>
+<th>适用于</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>helloworld  hello_world</td>
+<td>全部小写</td>
+<td>文件名（注意win下不区分大小写）、一般变量名（包括形参、结构体成员）、取值或设值功能的函数名、命名空间</td>
+</tr>
+<tr>
+<td>helloworld_ hello<em>world</em></td>
+<td>全部小写，最后接下划线</td>
+<td>类的成员变量</td>
+</tr>
+<tr>
+<td>helloWorld</td>
+<td></td>
+<td>竟然没有</td>
+</tr>
+<tr>
+<td>kHelloWorld</td>
+<td>以‘k’开头，大小写混写</td>
+<td>静态储存类型的变量（const，static，extern，全局变量）、枚举常量（推荐）</td>
+</tr>
+<tr>
+<td>HelloWorld</td>
+<td>每个单词首字母大写，不包含下划线</td>
+<td>类型命名（类、结构体、类型别名、枚举类型、类型模板参数）；函数名（除取值和设值功能外。缩写也要只是首字母大写）</td>
+</tr>
+<tr>
+<td>HELLO_WORLD</td>
+<td>全部大写，以下划线隔开</td>
+<td>宏、枚举常量（不推荐）</td>
+</tr>
+</tbody>
+</table>
+<p>​ 特殊情况：</p>
+<ol>
+<li>类型别名：uint</li>
+</ol>
+<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>什么时候使用以下划线开头的命名方式？</p>
+<p>为什么OpenCV库里有以下划线开始或结束命名的习惯？</p>
+<p>如<a href="https://docs.opencv.org/3.4.1/db/d4e/classcv_1_1Point__.html" target="_blank" rel="noopener">Point_ (_Tp _x, _Tp _y)</a>中的<code>Point_</code>和<code>_x</code>以及<code>_y</code></p>
+<p><a href="http://www.cplusplus.com/forum/general/95813/" target="_blank" rel="noopener">Why _type (underscore before identifier and variable)</a></p>
+<p><a href="https://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier" target="_blank" rel="noopener">What are the rules about using an underscore in a C++ identifier?</a></p>
+<p>以下划线开头的命名方式一般出现在各种库中。我们平时编程命名不要这样。</p>
+<h3 id="注释-加入个人倾向"><a href="#注释-加入个人倾向" class="headerlink" title="注释(加入个人倾向)"></a><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/comments/" target="_blank" rel="noopener">注释</a>(加入个人倾向)</h3><p>列出个人感觉要做笔记的部分，更全面的内容参考链接。</p>
+<ul>
+<li><p>平时使用<code>//</code>来进行注释，不使用<code>/* */</code></p>
+</li>
+<li><p>文件的注释（每行注释前空两格空格）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** @file bits/stl_list.h</span></span><br><span class="line"><span class="comment"> *  This is an internal header file, included by other library headers.</span></span><br><span class="line"><span class="comment"> *  Do not attempt to use it directly. @headername&#123;list&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _STL_LIST_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _STL_LIST_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* _STL_LIST_H */</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>函数和类的注释使用如下形式（参考stl中的库函数）</p>
+<p>例子如下：</p>
+<p>单词前加@可以高亮，所以brief，param以及注释里提及参数时前面都加@来突出。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  @brief  Builds a %vector from an initializer list.</span></span><br><span class="line"><span class="comment"> *  @param  __l  An initializer_list.</span></span><br><span class="line"><span class="comment"> *  @param  __a  An allocator.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  Create a %vector consisting of copies of the elements in the</span></span><br><span class="line"><span class="comment"> *  initializer_list @a __l.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  This will call the element type's copy constructor N times</span></span><br><span class="line"><span class="comment"> *  (where N is @a __l.size()) and do no memory reallocation.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">vector</span>(<span class="built_in">initializer_list</span>&lt;value_type&gt; __l,</span><br><span class="line">	  <span class="keyword">const</span> allocator_type&amp; __a = allocator_type())</span><br><span class="line">: _Base(__a)</span><br><span class="line">&#123;</span><br><span class="line">  _M_range_initialize(__l.begin(), __l.end(),</span><br><span class="line">			         random_access_iterator_tag());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>使用<code>TODO</code>来表示后续要做的改进</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TODO(kl@gmail.com): Use a "*" here for concatenation operator.</span></span><br><span class="line"><span class="comment">// TODO(Zeke) change this to use relations.</span></span><br><span class="line"><span class="comment">// TODO(bug 12345): remove the "Last visitors" feature</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年08月18日 10:49</p>
+        <p>原始链接： <a class="post-url" href="/2018/06/22/Cplusplus-Style-Guide/" title="Cplusplus-Style-Guide">http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="SJ">
+                SJ
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thank u ~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/&title=《Cplusplus-Style-Guide》 — SJ's Blog&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/&title=《Cplusplus-Style-Guide》 — SJ's Blog&source=记录生活中的精彩" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Cplusplus-Style-Guide》 — SJ's Blog&url=http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/06/22/Cplusplus-Style-Guide/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资料汇总"><span class="post-toc-text">资料汇总</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Google编程规范资料"><span class="post-toc-text">Google编程规范资料</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文档篇"><span class="post-toc-text">文档篇</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#工具篇"><span class="post-toc-text">工具篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Cpplint"><span class="post-toc-text">Cpplint</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#讨论篇"><span class="post-toc-text">讨论篇</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内容篇"><span class="post-toc-text">内容篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预处理宏"><span class="post-toc-text">预处理宏</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命名"><span class="post-toc-text">命名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下划线"><span class="post-toc-text">下划线</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释-加入个人倾向"><span class="post-toc-text">注释(加入个人倾向)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/06/28/ImageProcessing/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          ImageProcessing
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/06/16/CMake/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">CMake</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="gitment_container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Fri Jun 22 2018 20:15:47 GMT+0800', // 使用文章的时间来判断文章
+  owner: 'JustForFunOk',
+  repo: 'JustForFunOk.github.io', //将评论储存在这个仓库的评论里
+  oauth: {
+    client_id: '4621b003f93d45ee5a4e',
+    client_secret: '1b0b8c75ca9ff29600a4e7907463f71d79bdb163',
+  },
+})
+gitment.render('gitment_container')
+</script>
+
+    
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 SJ<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/OpenCV/">OpenCV</a><a class="category-link" href="/categories/Ubuntu/">Ubuntu</a><a class="category-link" href="/categories/作品展示/">作品展示</a><a class="category-link" href="/categories/数学/">数学</a><a class="category-link" href="/categories/电脑个性化/">电脑个性化</a><a class="category-link" href="/categories/编程语言/">编程语言</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

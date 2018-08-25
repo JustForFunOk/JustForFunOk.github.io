@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="SunJian,SunJian's Blog" />
   
-  <meta name="description" content="涉及到版本都按照写博客时的最新版本来。  单词笔记 speck 斑点 filterSpeckles 滤除斑点  disparity map 差分图 Filters off small noise blobs (speckles) in the disparity map.   常用函数 图像的均值和方差 meanStdDev() 图像中的最大值和最小值以及位置 minMaxLoc() minMa">
+  <meta name="description" content="涉及到版本都按照写博客时的最新版本来。  资料汇总Learn OpenCV 基于OpenCV实现的工程功能，提供源码，做项目时可参考。 单词笔记 speck 斑点 filterSpeckles 滤除斑点  disparity map 差分图 Filters off small noise blobs (speckles) in the disparity map.   缩写 ddepth –&amp;g">
 <meta name="keywords" content="汇总,OpenCV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCV汇总">
 <meta property="og:url" content="http://yoursite.com/2018/03/26/OpenCV汇总/index.html">
 <meta property="og:site_name" content="SJ&#39;s Blog">
-<meta property="og:description" content="涉及到版本都按照写博客时的最新版本来。  单词笔记 speck 斑点 filterSpeckles 滤除斑点  disparity map 差分图 Filters off small noise blobs (speckles) in the disparity map.   常用函数 图像的均值和方差 meanStdDev() 图像中的最大值和最小值以及位置 minMaxLoc() minMa">
+<meta property="og:description" content="涉及到版本都按照写博客时的最新版本来。  资料汇总Learn OpenCV 基于OpenCV实现的工程功能，提供源码，做项目时可参考。 单词笔记 speck 斑点 filterSpeckles 滤除斑点  disparity map 差分图 Filters off small noise blobs (speckles) in the disparity map.   缩写 ddepth –&amp;g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-17T03:28:28.402Z">
+<meta property="og:updated_time" content="2018-08-18T02:49:02.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCV汇总">
-<meta name="twitter:description" content="涉及到版本都按照写博客时的最新版本来。  单词笔记 speck 斑点 filterSpeckles 滤除斑点  disparity map 差分图 Filters off small noise blobs (speckles) in the disparity map.   常用函数 图像的均值和方差 meanStdDev() 图像中的最大值和最小值以及位置 minMaxLoc() minMa">
+<meta name="twitter:description" content="涉及到版本都按照写博客时的最新版本来。  资料汇总Learn OpenCV 基于OpenCV实现的工程功能，提供源码，做项目时可参考。 单词笔记 speck 斑点 filterSpeckles 滤除斑点  disparity map 差分图 Filters off small noise blobs (speckles) in the disparity map.   缩写 ddepth –&amp;g">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -151,6 +151,8 @@
             <blockquote>
 <p>涉及到版本都按照写博客时的最新版本来。</p>
 </blockquote>
+<h2 id="资料汇总"><a href="#资料汇总" class="headerlink" title="资料汇总"></a>资料汇总</h2><p><a href="https://www.learnopencv.com/" target="_blank" rel="noopener">Learn OpenCV</a></p>
+<p>基于OpenCV实现的工程功能，提供源码，做项目时可参考。</p>
 <h2 id="单词笔记"><a href="#单词笔记" class="headerlink" title="单词笔记"></a>单词笔记</h2><ul>
 <li><p>speck 斑点</p>
 <p>filterSpeckles 滤除斑点</p>
@@ -158,6 +160,9 @@
 <li><p>disparity map 差分图</p>
 <p>Filters off small noise blobs (speckles) in the disparity map.</p>
 </li>
+</ul>
+<h3 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h3><ul>
+<li><code>ddepth</code> –&gt; Destination depth</li>
 </ul>
 <h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><ul>
 <li>图像的均值和方差 <a href="https://docs.opencv.org/3.4.1/d2/de8/group__core__array.html#ga846c858f4004d59493d7c6a4354b301d" target="_blank" rel="noopener">meanStdDev()</a></li>
@@ -230,6 +235,10 @@
 <p>转换成8位图像用于显示。</p>
 <p>注意：16位有符号和16位无符号转换成8位图显示出来都是一样的？！</p>
 </li>
+<li><p><a href="https://docs.opencv.org/3.4.1/dd/d1a/group__imgproc__feature.html#ga2a671611e104c093843d7b7fc46d24af" target="_blank" rel="noopener">Canny()</a></p>
+<p>直接在16位图上检测边缘。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Mat blurImage,dx,dy;</span><br><span class="line">Scharr(blurImage,dx,CV_16S,<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">Scharr(blurImage,dy,CV_16S,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">Canny( dx,dy, edge2, edgeThreshScharr, edgeThreshScharr*<span class="number">3</span> );</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h3 id="读取显示-raw类型的文件"><a href="#读取显示-raw类型的文件" class="headerlink" title="读取显示.raw类型的文件"></a>读取显示.raw类型的文件</h3><p>不能直接将.raw读取到Mat中要以文件流来读取再放入到Mat中</p>
 <p>参考：<a href="http://answers.opencv.org/question/58106/unable-to-open-raw-image-through-opencv/" target="_blank" rel="noopener">opencv-Unable to open raw image through opencv</a></p>
@@ -238,10 +247,49 @@
 <p>参考：<a href="https://docs.opencv.org/trunk/d7/d4d/tutorial_py_thresholding.html" target="_blank" rel="noopener">OpenCV-Image Thresholding</a> <a href="https://stackoverflow.com/questions/17141535/how-to-use-the-otsu-threshold-in-opencv" target="_blank" rel="noopener">StackOverflow-How to use the OTSU Threshold in opencv?</a></p>
 <h3 id="多阈值分割图像"><a href="#多阈值分割图像" class="headerlink" title="多阈值分割图像"></a>多阈值分割图像</h3><p>参考：<a href="https://stackoverflow.com/questions/22706742/multi-otsumulti-thresholding-with-opencv" target="_blank" rel="noopener">StackOverflow-Multi otsu(multi-thresholding) with openCV</a> <a href="https://stackoverflow.com/questions/35056760/multi-level-4-otsu-thresholding" target="_blank" rel="noopener">StackOverflow-multi-level (4) Otsu thresholding</a>  <a href="https://stackoverflow.com/questions/22706742/multi-otsumulti-thresholding-with-opencv" target="_blank" rel="noopener">Multi otsu(multi-thresholding) with openCV</a> <a href="https://stackoverflow.com/questions/34856019/multi-level-thresholding-otsus-method" target="_blank" rel="noopener">Multi-Level Thresholding. Otsu’s Method</a></p>
 <h3 id="给定轮廓点拟合矩形"><a href="#给定轮廓点拟合矩形" class="headerlink" title="给定轮廓点拟合矩形"></a>给定轮廓点拟合矩形</h3><p>Opencv中的<a href="https://docs.opencv.org/3.4.1/d3/dc0/group__imgproc__shape.html#ga0012a5fdaea70b8a9970165d98722b4c" target="_blank" rel="noopener">approxPolyDP()</a>是指定拟合误差后用多边形拟合给定轮廓，很可能拟合出了五边六边形，不能满足拟合出四边形的效果，而且拟合出的四边形偏小，四边形被给定轮廓全部包围，所以并没有达到拟合的效果。用的原理是<a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm" target="_blank" rel="noopener">Ramer–Douglas–Peucker algorithm</a></p>
+<h3 id="findContours的用法"><a href="#findContours的用法" class="headerlink" title="findContours的用法"></a><a href="https://docs.opencv.org/3.4.1/d3/dc0/group__imgproc__shape.html#ga17ed9f5d79ae97bd4c7cf18403e1689a" target="_blank" rel="noopener">findContours</a>的用法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> cv::findContours(InputOutputArray 	    image,</span><br><span class="line">                      OutputArrayOfArrays 	contours,</span><br><span class="line">                      OutputArray 	        hierarchy,</span><br><span class="line">                      <span class="keyword">int</span> 	                mode,</span><br><span class="line">                      <span class="keyword">int</span> 	                method,</span><br><span class="line">                      Point 	            offset = Point() </span><br><span class="line">                     )</span><br></pre></td></tr></table></figure>
+<p>其中的<code>hierarchy</code>和<code>mode</code>这两个参数不好理解，可以参考：<a href="https://blog.csdn.net/dcrmg/article/details/51987348" target="_blank" rel="noopener">findContours函数参数详解</a></p>
+<ul>
+<li>hierarchy向量内每一个元素的4个int型变量——<code>hierarchy[i][0]</code> ~<code>hierarchy[i][3]</code>，分别表示第i个轮廓的后一个轮廓、前一个轮廓、父轮廓、内嵌轮廓的索引编号。如果当前轮廓没有对应的后一个轮廓、前一个轮廓、父轮廓或内嵌轮廓的话，则相应位被设置为默认值-1。</li>
+<li>mode的有四种情况：<ol>
+<li>RETR_EXTERNAL只检测最外围轮廓，包含在外围轮廓内的内围轮廓被忽略；</li>
+<li>RETR_LIST   检测所有的轮廓，包括内围、外围轮廓，但是检测到的轮廓不建立等级关系，彼此之间独立，没有等级关系，这就意味着这个检索模式下不存在父轮廓或内嵌轮廓，所以hierarchy向量内所有元素的第3、第4个分量都会被置为-1；</li>
+<li>RETR_CCOMP  检测所有的轮廓，但所有轮廓只建立两个等级关系，外围为顶层，若外围内的内围轮廓还包含了其他的轮廓信息，则内围内的所有轮廓均归属于顶层；</li>
+<li>RETR_TREE， 检测所有轮廓，所有轮廓建立一个等级树结构。外层轮廓包含内层轮廓，内层轮廓还可以继续包含内嵌轮廓。</li>
+</ol>
+</li>
+</ul>
+<h4 id="轮廓是否闭合"><a href="#轮廓是否闭合" class="headerlink" title="轮廓是否闭合"></a>轮廓是否闭合</h4><p>可以直接通过这个函数判断轮廓是否是闭合的：<a href="https://stackoverflow.com/questions/22240746/recognize-open-and-closed-shapes-opencv" target="_blank" rel="noopener">Recognize open and closed shapes opencv</a></p>
+<ul>
+<li>就是判断<code>hierarchy[i][2]</code>这一位的值，若为<code>-1</code>则不是闭合的，否则是闭合的。</li>
+</ul>
+<h3 id="使用RotatedRect截取图像中的一部分"><a href="#使用RotatedRect截取图像中的一部分" class="headerlink" title="使用RotatedRect截取图像中的一部分"></a>使用RotatedRect截取图像中的一部分</h3><p>OpenCV只有使用非旋转的Rect来构造Mat，<code>Mat (const Mat &amp;m, const Rect &amp;roi)</code>，若要实现此功能需要考虑旋转问题。</p>
+<p>参考：<a href="http://answers.opencv.org/question/497/extract-a-rotatedrect-area/" target="_blank" rel="noopener">Extract a RotatedRect area</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此代码经测试可用</span></span><br><span class="line"><span class="comment">// rect is the RotatedRect (I got it from a contour...)</span></span><br><span class="line">RotatedRect rect;</span><br><span class="line"><span class="comment">// matrices we'll use</span></span><br><span class="line">Mat M, rotated, cropped;</span><br><span class="line"><span class="comment">// get angle and size from the bounding box</span></span><br><span class="line"><span class="keyword">float</span> angle = rect.angle;</span><br><span class="line">Size rect_size = rect.size;</span><br><span class="line"><span class="comment">// thanks to http://felix.abecassis.me/2011/10/opencv-rotation-deskewing/</span></span><br><span class="line"><span class="keyword">if</span> (rect.angle &lt; <span class="number">-45.</span>) &#123;</span><br><span class="line">    angle += <span class="number">90.0</span>;</span><br><span class="line">    swap(rect_size.width, rect_size.height);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// get the rotation matrix</span></span><br><span class="line">M = getRotationMatrix2D(rect.center, angle, <span class="number">1.0</span>);</span><br><span class="line"><span class="comment">// perform the affine transformation</span></span><br><span class="line">warpAffine(src, rotated, M, src.size(), INTER_CUBIC);</span><br><span class="line"><span class="comment">// crop the resulting image</span></span><br><span class="line">getRectSubPix(rotated, rect_size, rect.center, cropped);</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li><p><a href="http://answers.opencv.org/question/497/extract-a-rotatedrect-area/" target="_blank" rel="noopener">getRectSubPix()</a>这个函数的输入和输出图像的深度有要求，而官方文档上没有说，通过查看源代码可以看出。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xxx\opencv\sources\modules\imgproc\src\samplers.cpp</span></span><br><span class="line">depth == CV_8U &amp;&amp; ddepth == CV_8U</span><br><span class="line">depth == CV_8U &amp;&amp; ddepth == CV_32F</span><br><span class="line">depth == CV_32F &amp;&amp; ddepth == CV_32F</span><br></pre></td></tr></table></figure>
+<p>若上述三种情况都不满足吗，则会报错”Unsupported combination of input and output formats”。</p>
+</li>
+</ul>
+<h3 id="Mat的深拷贝和浅拷贝"><a href="#Mat的深拷贝和浅拷贝" class="headerlink" title="Mat的深拷贝和浅拷贝"></a>Mat的深拷贝和浅拷贝</h3><p>Mat A，B；</p>
+<ul>
+<li>浅拷贝<ul>
+<li>B = A；</li>
+<li>Mat B(A);</li>
+</ul>
+</li>
+<li>深拷贝<ul>
+<li>B = A.clone();</li>
+<li>A.copyTo(B);</li>
+</ul>
+</li>
+</ul>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年05月17日 11:28</p>
+        <p>最后更新： 2018年08月18日 10:49</p>
         <p>原始链接： <a class="post-url" href="/2018/03/26/OpenCV汇总/" title="OpenCV汇总">http://yoursite.com/2018/03/26/OpenCV汇总/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -361,7 +409,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单词笔记"><span class="post-toc-text">单词笔记</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用函数"><span class="post-toc-text">常用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux平台"><span class="post-toc-text">Linux平台</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#默认安装"><span class="post-toc-text">默认安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#准备工作：安装所需要的包"><span class="post-toc-text">准备工作：安装所需要的包</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#获取OpenCV源代码"><span class="post-toc-text">获取OpenCV源代码</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Build-OpenCV"><span class="post-toc-text">Build OpenCV</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工程配置"><span class="post-toc-text">工程配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VisualStudio"><span class="post-toc-text">VisualStudio</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小功能"><span class="post-toc-text">小功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一个窗口同时显示多张图片"><span class="post-toc-text">一个窗口同时显示多张图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将图片储存到unsigned-char-中"><span class="post-toc-text">将图片储存到unsigned char[]中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化一幅图像"><span class="post-toc-text">初始化一幅图像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绘制直方图"><span class="post-toc-text">绘制直方图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#改变图像中指定的像素值"><span class="post-toc-text">改变图像中指定的像素值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图像操作"><span class="post-toc-text">图像操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#16位深度图"><span class="post-toc-text">16位深度图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#读取显示-raw类型的文件"><span class="post-toc-text">读取显示.raw类型的文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在类中使用cvSetMouseCallback"><span class="post-toc-text">在类中使用cvSetMouseCallback()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单阈值分割图像"><span class="post-toc-text">单阈值分割图像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多阈值分割图像"><span class="post-toc-text">多阈值分割图像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#给定轮廓点拟合矩形"><span class="post-toc-text">给定轮廓点拟合矩形</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资料汇总"><span class="post-toc-text">资料汇总</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单词笔记"><span class="post-toc-text">单词笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缩写"><span class="post-toc-text">缩写</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用函数"><span class="post-toc-text">常用函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux平台"><span class="post-toc-text">Linux平台</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#默认安装"><span class="post-toc-text">默认安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#准备工作：安装所需要的包"><span class="post-toc-text">准备工作：安装所需要的包</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#获取OpenCV源代码"><span class="post-toc-text">获取OpenCV源代码</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Build-OpenCV"><span class="post-toc-text">Build OpenCV</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工程配置"><span class="post-toc-text">工程配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VisualStudio"><span class="post-toc-text">VisualStudio</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小功能"><span class="post-toc-text">小功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一个窗口同时显示多张图片"><span class="post-toc-text">一个窗口同时显示多张图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将图片储存到unsigned-char-中"><span class="post-toc-text">将图片储存到unsigned char[]中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化一幅图像"><span class="post-toc-text">初始化一幅图像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绘制直方图"><span class="post-toc-text">绘制直方图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#改变图像中指定的像素值"><span class="post-toc-text">改变图像中指定的像素值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图像操作"><span class="post-toc-text">图像操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#16位深度图"><span class="post-toc-text">16位深度图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#读取显示-raw类型的文件"><span class="post-toc-text">读取显示.raw类型的文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在类中使用cvSetMouseCallback"><span class="post-toc-text">在类中使用cvSetMouseCallback()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单阈值分割图像"><span class="post-toc-text">单阈值分割图像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多阈值分割图像"><span class="post-toc-text">多阈值分割图像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#给定轮廓点拟合矩形"><span class="post-toc-text">给定轮廓点拟合矩形</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#findContours的用法"><span class="post-toc-text">findContours的用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#轮廓是否闭合"><span class="post-toc-text">轮廓是否闭合</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用RotatedRect截取图像中的一部分"><span class="post-toc-text">使用RotatedRect截取图像中的一部分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mat的深拷贝和浅拷贝"><span class="post-toc-text">Mat的深拷贝和浅拷贝</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -460,10 +508,10 @@ gitment.render('gitment_container')
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/OpenCV/">OpenCV</a><a class="category-link" href="/categories/Ubuntu/">Ubuntu</a><a class="category-link" href="/categories/作品展示/">作品展示</a><a class="category-link" href="/categories/电脑个性化/">电脑个性化</a><a class="category-link" href="/categories/编程语言/">编程语言</a>
+            <a class="category-link" href="/categories/OpenCV/">OpenCV</a><a class="category-link" href="/categories/Ubuntu/">Ubuntu</a><a class="category-link" href="/categories/作品展示/">作品展示</a><a class="category-link" href="/categories/数学/">数学</a><a class="category-link" href="/categories/电脑个性化/">电脑个性化</a><a class="category-link" href="/categories/编程语言/">编程语言</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -496,7 +544,7 @@ gitment.render('gitment_container')
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+            <a href="/tags/Bing/" style="font-size: 10px;">Bing</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/助记/" style="font-size: 10px;">助记</a> <a href="/tags/壁纸/" style="font-size: 10px;">壁纸</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/汇总/" style="font-size: 20px;">汇总</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
         </div>
     </div>
 </div>
